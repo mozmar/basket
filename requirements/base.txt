@@ -83,9 +83,9 @@ pyjwt==1.7.1 \
 raven==6.10.0 \
     --hash=sha256:44a13f87670836e153951af9a3c80405d36b43097db869a36e92809673692ce4 \
     --hash=sha256:3fa6de6efa2493a7c827472e984ce9b020797d0da16f1db67197bcc23c8fae54
-contextlib2==0.5.3 \
-    --hash=sha256:888a280f24dcff2cc55ac0e51fc764484b284f91ff711a219e459a6d5f76de2b \
-    --hash=sha256:30e500f13921c73c96f49a6dd2adfbdd92bc3fae12183e91b06b2e4583486206
+contextlib2==0.5.5 \
+    --hash=sha256:f5260a6e679d2ff42ec91ec5252f4eeffdcf21053db9113bd0a8e4d953769c00 \
+    --hash=sha256:509f9419ee91cdd00ba34443217d5ca51f5a364a404e1dce9e8979cea969ca48
 simple-salesforce==0.68.1 \
     --hash=sha256:33f82aec8a9a6270ec70b4b7f0027504ffe9a9aa2bb199682707e1b4714c4c41
 django-extensions==1.6.7 \
