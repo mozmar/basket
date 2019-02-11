@@ -38,8 +38,8 @@ hiredis==1.0.0 \
     --hash=sha256:d2ef58cece6cae4b354411df498350d836f10b814c8a890df0d8079aff30c518 \
     --hash=sha256:d1e2e751327781ad81df5a5a29d7c7b19ee0ebfbeddf037fd8df19ec1c06e18b \
     --hash=sha256:e97c953f08729900a5e740f1760305434d62db9f281ac351108d6c4b5bf51795
-msgpack-python==0.4.6 \
-    --hash=sha256:bfcc581c9dbbf07cc2f951baf30c3249a57e20dcbd60f7e6ffc43ab3cc614794
+msgpack-python==0.5.6 \
+    --hash=sha256:378cc8a6d3545b532dfd149da715abae4fda2a3adb6d74e525d0d5e51f46909b
 whitenoise==3.3.1 \
     --hash=sha256:15f43b2e701821b95c9016cf469d29e2a546cb1c7dead584ba82c36f843995cf \
     --hash=sha256:9d81515f2b5b27051910996e1e860b1332e354d9e7bcf30c98f21dcb6713e0dd
