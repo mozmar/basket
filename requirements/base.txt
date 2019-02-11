@@ -55,8 +55,9 @@ PyYAML==3.13 \
     --hash=sha256:e170a9e6fcfd19021dd29845af83bb79236068bf5fd4df3327c1be18182b2531 \
     --hash=sha256:aa7dd4a6a427aed7df6fb7f08a580d68d9b118d90310374716ae90b710280af1 \
     --hash=sha256:3ef3092145e9b70e3ddd2c7ad59bdd0252a94dfe3949721633e41344de00a6bf
-ua-parser==0.5.1 \
-    --hash=sha256:69a4cdaef3268d88f2dc6f8b8f5c3a13955fe3daa5f59746a817dcf891be5899
+ua-parser==0.8.0 \
+    --hash=sha256:3908c19ea0abdcdfe7245366dc03e5b4a8901ec17105bd66ba2ccbe3948dce8a \
+    --hash=sha256:97bbcfc9321a3151d96bb5d62e54270247b0e3be0590a6f2ff12329851718dcb
 https://github.com/selwin/python-user-agents/archive/ed386c818ff7a10849348711d4bdd00506088702.tar.gz#egg=user-agents==1.0.1 \
     --hash=sha256:82be0e44ed40c0eaf87ea0e87a24fc8f0afdd8eb14ffb478aad02cb29e3eed2c
 amqp==1.4.9 \
