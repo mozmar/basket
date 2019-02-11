@@ -8,9 +8,9 @@
 flake8==3.7.5 \
     --hash=sha256:c3ba1e130c813191db95c431a18cb4d20a468e98af7a77e2181b68574481ad36 \
     --hash=sha256:fd9ddf503110bf3d8b1d270e8c673aab29ccb3dd6abf29bae1f54e5116ab4a91
-mccabe==0.3.1 \
-    --hash=sha256:bd6c080fb372aebcb0ce19e35ddac744f2abf5a7befa207db2d1097d48efe63a \
-    --hash=sha256:5f7ea6fb3aa9afe146d07fd6d5cedf788747d8b0c29e44732453c2b2db1e3d16
+mccabe==0.6.1 \
+    --hash=sha256:ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42 \
+    --hash=sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f
 mock==2.0.0 \
     --hash=sha256:5ce3c71c5545b472da17b72268978914d0252980348636840bd34a00b5cc96c1 \
     --hash=sha256:b158b6df76edd239b8208d481dc46b6afd45a846b7812ff0ce58971cf5bc8bba
