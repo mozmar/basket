@@ -140,8 +140,8 @@ scandir==1.9.0 \
 APScheduler==3.5.3 \
     --hash=sha256:a8fe0c82d1c21bcf4a1b0e00aa35709f1f63fdd36446e406fa56cc0d51d3acc6 \
     --hash=sha256:6599bc78901ee7e9be85cbd073d9cc155c42d2bc867c5cde4d4d1cc339ebfbeb
-tzlocal==1.3.2 \
-    --hash=sha256:07dee68c9f5b9ca665762eb0860418cc289bd561f7e32a4ec37a09426895e7bd
+tzlocal==1.5.1 \
+    --hash=sha256:4ebeb848845ac898da6519b9b31879cf13b6626f7184c496037b818e238f2c4e
 phonenumbers==8.8.1 \
     --hash=sha256:796c0eb59f694f3ef70bc005bc02530189edc9c6ce242900a16afd56a5515460 \
     --hash=sha256:be0b891b3bb6dbbb3d24a11da756fa6d34c5592c775f6df42f969b7dc058c425
