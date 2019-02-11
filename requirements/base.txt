@@ -122,9 +122,9 @@ python-dateutil==2.8.0 \
 s3transfer==0.2.0 \
     --hash=sha256:7b9ad3213bff7d357f888e0fab5101b56fa1a0548ee77d121c3a3dbfbef4cb2e \
     --hash=sha256:f23d5cb7d862b104401d9021fc82e5fa0e0cf57b7660a1331425aab0c691d021
-pathlib2==2.2.1 \
-    --hash=sha256:31b7bac38144612b18fb55adc4285e34a766ae64fdb1200c72e0b0cdd632ef4b \
-    --hash=sha256:ce9007df617ef6b7bd8a31cd2089ed0c1fed1f7c23cf2bf1ba140b3dd563175d
+pathlib2==2.3.3 \
+    --hash=sha256:5887121d7f7df3603bca2f710e7219f3eca0eb69e0b7cc6e0a022e155ac931a7 \
+    --hash=sha256:25199318e8cc3c25dcb45cbe084cc061051336d5a9ea2a12448d3d8cb748f742
 scandir==1.5 \
     --hash=sha256:c2612d1a487d80fb4701b4a91ca1b8f8a695b1ae820570815e85e8c8b23f1283
 APScheduler==3.3.1 \
