@@ -60,9 +60,9 @@ chardet==3.0.4 \
 josepy==1.1.0 \
     --hash=sha256:1309a25aac3caeff5239729c58ff9b583f7d022ffdb1553406ddfc8e5b52b76e \
     --hash=sha256:fb5c62c77d26e04df29cb5ecd01b9ce69b6fcc9e521eb1ca193b7faa2afa7086
-mozilla-django-oidc==0.4.2 \
-    --hash=sha256:77c29c47d67750d3c53fcd51f1aa496a2cdd65dd27a1f2a15e56ecc3c3714f19 \
-    --hash=sha256:650716143525bb4bae553dd8c740a1c5986baf6aeae115cba01f6a217ee5fa4f
+mozilla-django-oidc==1.2.1 \
+    --hash=sha256:a7805792e86c247ad31a626b9e497aeb4b8e247704cd3e0aa9317dc1d650fb4f \
+    --hash=sha256:5760b55757e9de234e44b0b58457cd9443dd64ec2f5a9cf686c50669ac66f13e
 packaging==16.8 \
     --hash=sha256:99276dc6e3a7851f32027a68f1095cd3f77c148091b092ea867a351811cfe388 \
     --hash=sha256:5d50835fdf0a7edf0b55e311b7c887786504efea1177abd7e69329a8e5ea619e
