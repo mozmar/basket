@@ -5,8 +5,9 @@
 
 -r base.txt
 
-flake8==2.0 \
-    --hash=sha256:8dce4f7e64cc202cc6da93eab84b2ce660110ff684b6738bba64a0a431b3bc69
+flake8==3.7.5 \
+    --hash=sha256:c3ba1e130c813191db95c431a18cb4d20a468e98af7a77e2181b68574481ad36 \
+    --hash=sha256:fd9ddf503110bf3d8b1d270e8c673aab29ccb3dd6abf29bae1f54e5116ab4a91
 mccabe==0.3.1 \
     --hash=sha256:bd6c080fb372aebcb0ce19e35ddac744f2abf5a7befa207db2d1097d48efe63a \
     --hash=sha256:5f7ea6fb3aa9afe146d07fd6d5cedf788747d8b0c29e44732453c2b2db1e3d16
