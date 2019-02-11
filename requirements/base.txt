@@ -77,11 +77,9 @@ https://github.com/pmclanahan/django-synctool/archive/5f7cf9bad741e60bd9df32aa90
     --hash=sha256:2dd290c5339769e3c40d644b5248236bec7c558eaccb922badd7c39c5fd5e095
 https://github.com/pmac/FuelSDK-Python/archive/65eee0876a47c9e76b58011c3587fd053f63c4fe.tar.gz#egg=FuelSDK==0.9.4.1-mozfork \
     --hash=sha256:9a617b24dd28d71dbfb72acb8d0d2b770a2b1c01aaca48acdc8e9f3cc9e4cb2c
-pyjwt==0.1.9 \
-    --hash=sha256:f3805a255fc4eefa09066bb3d97d552db5eea18ee8a34d2823987f1e051a0bca \
-    --hash=sha256:ae72c56f8f660958d32c3f93186df8c6b52fb617dc687ff67d255303a577e609 \
-    --hash=sha256:d335622bb6febe010b4989d2b74d7797745f70f4a6093ccc4584913bc5d77d5b \
-    --hash=sha256:608605a08d267a7de26a4f4c588c7e663ee07db386fc40acded20a6fcfc110ed
+pyjwt==1.7.1 \
+    --hash=sha256:5c6eca3c2940464d106b99ba83b00c6add741c9becaec087fb7ccdefea71350e \
+    --hash=sha256:8d59a976fb773f3e6a39c85636357c4f0e242707394cadadd9814f5cbaa20e96
 raven==6.5.0 \
     --hash=sha256:0adae40e004dfe2181d1f2883aa3d4ca1cf16dbe449ae4b445b011c6eb220a90 \
     --hash=sha256:84da75114739191bdf2388f296ffd6177e83567a7fbaf2701e034ad6026e4f3b
