@@ -28,7 +28,7 @@ meinheld==1.0.2
 mozilla-django-oidc==1.2.4
 msgpack-python==0.5.6
 mysqlclient==2.0.3
-newrelic==5.4.1.134
+newrelic==6.2.0.156
 phonenumbers==8.12.16
 PyFxA==0.7.7
 pysilverpop==0.2.6
