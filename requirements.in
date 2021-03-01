@@ -1,7 +1,7 @@
 # prod
 APScheduler==3.6.3
 boto3==1.16.59
-celery==4.4.7
+celery==5.0.5
 configparser==5.0.1
 contextlib2==0.6.0.post1
 dj-database-url==0.5.0
