@@ -22,7 +22,7 @@ email-validator==1.1.2
 gunicorn==20.0.4
 hiredis==1.0.1
 importlib-metadata==3.4.0
-ipaddress==1.0.22
+ipaddress==1.0.23
 lxml==4.6.2
 meinheld==1.0.2
 mozilla-django-oidc==1.2.4
