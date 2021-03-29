@@ -33,7 +33,7 @@ phonenumbers==8.12.16
 PyFxA==0.7.7
 pysilverpop==0.2.6
 python-decouple==3.4
-PyYAML==5.3
+PyYAML==5.4.1
 https://github.com/mozmeao/FuelSDK-Python/archive/172815bd74009e36b728b16f774f1aafecb06d03.tar.gz#egg=Salesforce-FuelSDK==1.2.0
 sentry-sdk==0.19.5
 simple-salesforce==1.10.1
