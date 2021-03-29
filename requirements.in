@@ -20,7 +20,7 @@ https://github.com/pmclanahan/django-synctool/archive/5f7cf9bad741e60bd9df32aa90
 django-watchman==1.2.0
 email-validator==1.1.2
 gunicorn==20.0.4
-hiredis==1.0.1
+hiredis==2.0.0
 importlib-metadata==3.4.0
 ipaddress==1.0.22
 lxml==4.6.2
