@@ -1,5 +1,5 @@
 import json
-from unittest.mock import patch, Mock, ANY, DEFAULT
+from unittest.mock import call, patch, Mock, ANY, DEFAULT
 from uuid import uuid4
 
 from django.test import TestCase
@@ -1018,6 +1018,63 @@ class CTMSTests(TestCase):
         }
         ctms = CTMS(mock_interface("GET", 200, [self.TEST_CTMS_CONTACT, contact2]))
         self.assertRaises(CTMSMultipleContactsError, ctms.get, amo_id=amo_id)
+
+    def test_get_by_several_ids_none_then_one(self):
+        """If multiple alt IDs are passed, the second is tried on miss."""
+        interface = Mock(spec_set=["get_by_alternate_id"])
+        interface.get_by_alternate_id.side_effect = ([], [self.TEST_CTMS_CONTACT])
+        ctms = CTMS(interface)
+        user_data = ctms.get(token="some-token", email="some-email@example.com")
+        assert user_data == self.TEST_BASKET_FORMAT
+        interface.get_by_alternate_id.assert_has_calls(
+            [
+                call(basket_token="some-token"),
+                call(primary_email="some-email@example.com"),
+            ]
+        )
+
+    def test_get_by_several_ids_both_none(self):
+        """If multiple alt IDs are passed and all miss, None is returned."""
+        interface = Mock(spec_set=["get_by_alternate_id"])
+        interface.get_by_alternate_id.side_effect = ([], [])
+        ctms = CTMS(interface)
+        user_data = ctms.get(token="some-token", email="some-email@example.com")
+        assert user_data is None
+        interface.get_by_alternate_id.assert_has_calls(
+            [
+                call(basket_token="some-token"),
+                call(primary_email="some-email@example.com"),
+            ]
+        )
+
+    def test_get_by_several_ids_mult_then_one(self):
+        """If multiple alt IDs are passed, the second is tried on dupes."""
+        interface = Mock(spec_set=["get_by_alternate_id"])
+        interface.get_by_alternate_id.side_effect = (
+            [{"contact": 1}, {"contact": 2}],
+            [self.TEST_CTMS_CONTACT],
+        )
+        ctms = CTMS(interface)
+        user_data = ctms.get(sfdc_id="sfdc-123", amo_id="amo-123")
+        assert user_data == self.TEST_BASKET_FORMAT
+        interface.get_by_alternate_id.assert_has_calls(
+            [call(amo_user_id="amo-123"), call(sfdc_id="sfdc-123")]
+        )
+
+    def test_get_by_several_ids_mult_then_none(self):
+        """If multiple alt IDs are passed, the second is tried on dupes."""
+        interface = Mock(spec_set=["get_by_alternate_id"])
+        interface.get_by_alternate_id.side_effect = (
+            [{"contact": 1}, {"contact": 2}],
+            [],
+        )
+        ctms = CTMS(interface)
+        self.assertRaises(
+            CTMSMultipleContactsError, ctms.get, sfdc_id="sfdc-456", amo_id="amo-456"
+        )
+        interface.get_by_alternate_id.assert_has_calls(
+            [call(amo_user_id="amo-456"), call(sfdc_id="sfdc-456")]
+        )
 
     def test_get_no_ids(self):
         """RuntimeError is raised if all IDs are None."""

@@ -448,12 +448,11 @@ class CTMSInterface:
         "email_id",
         "basket_token",
         "primary_email",
-        "sfdc_id",
         "fxa_id",
         "mofo_email_id",
     ]
     # Identifiers that can be shared by multiple CTMS records
-    shared_ids = ["mofo_contact_id", "amo_user_id", "fxa_primary_email"]
+    shared_ids = ["sfdc_id", "mofo_contact_id", "amo_user_id", "fxa_primary_email"]
     all_ids = unique_ids + shared_ids
 
     def __init__(self, session):
@@ -632,10 +631,10 @@ class CTMS:
         email_id=None,
         token=None,
         email=None,
-        sfdc_id=None,
         fxa_id=None,
         mofo_email_id=None,
         amo_id=None,
+        sfdc_id=None,
     ):
         """
         Get a contact record, using the first ID provided.
@@ -643,10 +642,10 @@ class CTMS:
         @param email_id: CTMS email ID
         @param token: external ID
         @param email: email address
-        @param sfdc_id: legacy SFDC ID
         @param fxa_id: external ID from FxA
         @param mofo_email_id: external ID from MoFo
         @param amo_id: external ID from AMO
+        @param sfdc_id: legacy SFDC ID
         @return: dict, or None if disabled
         @raises CTMSNoIds: no IDs are set
         @raises CTMSMultipleContacts:: multiple contacts returned
@@ -657,19 +656,20 @@ class CTMS:
         if email_id:
             contact = self.interface.get_by_email_id(email_id)
         else:
+            alt_ids = []
             if token:
-                id_name, id_value = "basket_token", token
-            elif email:
-                id_name, id_value = "primary_email", email
-            elif sfdc_id:
-                id_name, id_value = "sfdc_id", sfdc_id
-            elif fxa_id:
-                id_name, id_value = "fxa_id", fxa_id
-            elif mofo_email_id:
-                id_name, id_value = "mofo_email_id", mofo_email_id
-            elif amo_id:
-                id_name, id_value = "amo_user_id", amo_id
-            else:
+                alt_ids.append({"basket_token": token})
+            if email:
+                alt_ids.append({"primary_email": email})
+            if fxa_id:
+                alt_ids.append({"fxa_id": fxa_id})
+            if mofo_email_id:
+                alt_ids.append({"mofo_email_id": mofo_email_id})
+            if amo_id:
+                alt_ids.append({"amo_user_id": amo_id})
+            if sfdc_id:
+                alt_ids.append({"sfdc_id": sfdc_id})
+            if not alt_ids:
                 raise CTMSNoIdsError(
                     required_ids=(
                         "email_id",
@@ -682,15 +682,25 @@ class CTMS:
                     )
                 )
 
-            params = {id_name: id_value}
-            contacts = self.interface.get_by_alternate_id(**params)
+            # Try alternate IDs in order
+            first_run = True
+            first_contacts = None
+            contact = None
+            for params in alt_ids:
+                contacts = self.interface.get_by_alternate_id(**params)
+                if first_run:
+                    first_contacts = contacts
+                    first_run = False
+                if len(contacts) == 1:
+                    contact = contacts[0]
+                    break
 
-            if not contacts:
-                contact = None
-            elif len(contacts) == 1:
-                contact = contacts[0]
-            else:
-                raise CTMSMultipleContactsError(id_name, id_value, contacts)
+            # Did not find single contact, return result of first ID check
+            # If first alt ID returned multiple, raise exception
+            # If it returned an empty list, return None below
+            if contact is None and first_contacts:
+                id_name, id_value = list(alt_ids[0].items())[0]
+                raise CTMSMultipleContactsError(id_name, id_value, first_contacts)
 
         if contact:
             return from_vendor(contact)
